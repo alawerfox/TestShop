@@ -1,5 +1,6 @@
 package ru.kartyshova.testshop.presentation
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -24,7 +25,7 @@ class ShopViewModel : ViewModel() {
                 val listResult = ShopApiServise.retrofitService.getMain()
                 _status.value = listResult
             } catch (e: Exception) {
-
+                Log.e("Tete", "Error", e)
             }
         }
     }

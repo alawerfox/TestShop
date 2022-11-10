@@ -3,9 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Nikolay/TestShop/app/src/main/res/drawable/l.xml" value="0.332" />
+        <entry key="..\:/Users/Nikolay/TestShop/app/src/main/res/drawable/layout_background.xml" value="0.332" />
+        <entry key="..\:/Users/Nikolay/TestShop/app/src/main/res/drawable/phone.xml" value="0.332" />
         <entry key="..\:/Users/Nikolay/TestShop/app/src/main/res/layout/activity_main.xml" value="0.3546875" />
-        <entry key="..\:/Users/Nikolay/TestShop/app/src/main/res/layout/main_screen.xml" value="0.1375" />
+        <entry key="..\:/Users/Nikolay/TestShop/app/src/main/res/layout/best_seller.xml" value="0.9" />
+        <entry key="..\:/Users/Nikolay/TestShop/app/src/main/res/layout/fragment_shop.xml" value="0.3546875" />
+        <entry key="..\:/Users/Nikolay/TestShop/app/src/main/res/layout/hot_sales.xml" value="0.4047373841400618" />
+        <entry key="..\:/Users/Nikolay/TestShop/app/src/main/res/layout/kjhk.xml" value="0.3536458333333333" />
+        <entry key="..\:/Users/Nikolay/TestShop/app/src/main/res/layout/layout_bg.xml" value="0.3546875" />
+        <entry key="..\:/Users/Nikolay/TestShop/app/src/main/res/layout/main_screen.xml" value="0.25" />
         <entry key="..\:/Users/Nikolay/TestShop/app/src/main/res/layout/main_screen2.xml" value="0.3536458333333333" />
+        <entry key="..\:/Users/Nikolay/TestShop/app/src/main/res/layout/product_details.xml" value="0.33" />
+        <entry key="..\:/Users/Nikolay/TestShop/app/src/main/res/layout/shop_product_details.xml" value="0.75" />
       </map>
     </option>
   </component>
