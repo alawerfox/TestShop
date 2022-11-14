@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/back_background"/>
+        </shape>
+    </item>
+
+    <item android:drawable="@drawable/splash" android:gravity="center" android:bottom="380dp"
+        android:start="135dp" android:end="147dp" android:top="380dp"/>
+
+</layer-list>

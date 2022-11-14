@@ -18,4 +18,8 @@
         <item name = "android:textAllCaps">false</item>
 <!--        <item name="android:fontFamily">Mark Pro</item>-->
     </style>
+    <style name="AppTheme.Splash" parent="@style/Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/app_theme_launcher</item>
+        <item name = "android:windowFullscreen">true</item>
+    </style>
 </resources>

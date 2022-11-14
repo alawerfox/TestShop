@@ -7,15 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import ru.kartyshova.testshop.R
-import ru.kartyshova.testshop.data.BestSeller
-import ru.kartyshova.testshop.data.ProductCardResponse
 import ru.kartyshova.testshop.databinding.MainScreenBinding
-import ru.kartyshova.testshop.presentation.ProductDetailFragment.ProductDetailsFragment
-import ru.kartyshova.testshop.presentation.ShopViewModel
+import ru.kartyshova.testshop.data.ShopViewModel
 
 class MainFragment: Fragment() {
 
@@ -58,7 +54,7 @@ class MainFragment: Fragment() {
 
     }
 
-    fun showFilter(){
+    private fun showFilter(){
         val filter = BottomSheetDialog(requireContext())
         filter.setContentView(R.layout.filter)
         filter.show()

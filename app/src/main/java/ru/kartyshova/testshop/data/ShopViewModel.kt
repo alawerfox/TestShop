@@ -1,4 +1,4 @@
-package ru.kartyshova.testshop.presentation
+package ru.kartyshova.testshop.data
 
 import android.util.Log
 import androidx.lifecycle.LiveData
