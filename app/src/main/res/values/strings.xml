@@ -18,4 +18,21 @@
     <string name="shop5">125 GB</string>
     <string name="select_color">Select color and capacity</string>
     <string name="add_to_cart">Add to Cart</string>
+    <string name="done">Done</string>
+    <string name="filter_options">Filter options</string>
+    <string name="brand">Brand</string>
+    <string name="price">Price</string>
+    <string name="size">Size</string>
+    <string name="brand_1">Samsung</string>
+    <string name="price_1">300$ - 500$</string>
+    <string name="size_1">4.5 to 5.5 inches</string>
+    <string name="phones">Phones</string>
+    <string name="computer">Computer</string>
+    <string name="health">Health</string>
+    <string name="books">Books</string>
+    <string name="total">Total</string>
+    <string name="delivery">Delivery</string>
+    <string name="checkout">Checkout</string>
+    <string name="free">Free</string>
+    <string name="pr">3000$</string>
 </resources>

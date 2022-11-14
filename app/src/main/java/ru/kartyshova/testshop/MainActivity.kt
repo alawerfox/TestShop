@@ -15,14 +15,5 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        firstFragment(MainFragment(), R.id.container)
-    }
-
-
-    private fun firstFragment (f: Fragment, idHolder: Int) {
-        supportFragmentManager
-            .beginTransaction()
-            .replace(idHolder, f)
-            .commit()
     }
 }

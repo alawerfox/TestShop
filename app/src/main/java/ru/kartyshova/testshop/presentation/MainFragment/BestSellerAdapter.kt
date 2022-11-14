@@ -12,13 +12,19 @@ class BestSellerAdapter : RecyclerView.Adapter<BestSellerAdapter.BestSellerHolde
 
     var bestSeller = listOf<BestSeller>()
 
+    var onClick: (BestSeller) -> Unit = {}
+
     class BestSellerHolder(private val binding: BestSellerBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(bestSeller: BestSeller) = with(binding) {
+        fun bind(bestSeller: BestSeller, onClick: (BestSeller) -> Unit) = with(binding) {
             price.text = bestSeller.price_without_discount.toString()
             discountPrice.text = bestSeller.discount_price.toString()
             description.text = bestSeller.title
             Glide.with(pictureBestSeller).load(bestSeller.picture).into(pictureBestSeller)
+
+            root.setOnClickListener {
+                onClick(bestSeller)
+            }
         }
     }
 
@@ -30,7 +36,7 @@ class BestSellerAdapter : RecyclerView.Adapter<BestSellerAdapter.BestSellerHolde
 
     override fun onBindViewHolder(holder: BestSellerHolder, position: Int) {
         val item = bestSeller[position]
-        holder.bind(item)
+        holder.bind(item, onClick)
     }
 
     override fun getItemCount(): Int {

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_graph.xml"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="ru.kartyshova.testshop.presentation.MainFragment.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" >
+            <argument android:name="arg" app:argType="ru.kartyshova.testshop.data.BestSeller"/>
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailsFragment"
+        android:name="ru.kartyshova.testshop.presentation.ProductDetailFragment.ProductDetailsFragment"
+        android:label="ProductDetailsFragment" >
+        <action
+            android:id="@+id/action_productDetailsFragment_to_cartFragment"
+            app:destination="@id/cartFragment">
+            <argument android:name="arg" app:argType="ru.kartyshova.testshop.data.BestSeller"/>
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="ru.kartyshova.testshop.presentation.CartFragment.CartFragment"
+        android:label="CartFragment" />
+</navigation>

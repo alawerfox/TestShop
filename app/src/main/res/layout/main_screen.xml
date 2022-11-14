@@ -11,6 +11,28 @@
         android:layout_height="match_parent"
         android:backgroundTint="@color/gray_background">
 
+        <TextView
+            android:id="@+id/health"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/health"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/select3"
+            app:layout_constraintStart_toStartOf="@+id/select3"
+            app:layout_constraintTop_toBottomOf="@+id/select3" />
+
+        <TextView
+            android:id="@+id/books"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/books"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/select4"
+            app:layout_constraintStart_toStartOf="@+id/select4"
+            app:layout_constraintTop_toBottomOf="@+id/select4" />
+
         <ImageView
             android:id="@+id/select1"
             android:layout_width="71dp"
@@ -108,12 +130,34 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="17dp"
-            android:layout_marginTop="4dp"
             android:text="@string/hot_sales"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.038"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/phones" />
+
+        <TextView
+            android:id="@+id/phones"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/phones"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/select1"
+            app:layout_constraintStart_toStartOf="@+id/select1"
             app:layout_constraintTop_toBottomOf="@+id/select1" />
+
+        <TextView
+            android:id="@+id/computer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/computer"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/select2"
+            app:layout_constraintHorizontal_bias="0.533"
+            app:layout_constraintStart_toStartOf="@+id/select2"
+            app:layout_constraintTop_toBottomOf="@+id/select2" />
 
         <TextView
             android:id="@+id/best_seller"
@@ -128,9 +172,33 @@
             app:layout_constraintTop_toBottomOf="@+id/rv_hot_sales" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/navigation_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:backgroundTint="@color/back_background"
+                app:itemIconTint="@drawable/nav_selector"
+                app:itemTextColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:menu="@menu/buttom_menu" />
+
+            <ImageView
+                android:id="@+id/filter"
+                android:layout_width="11dp"
+                android:layout_height="13dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.927"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/filter" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -146,13 +214,18 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/best_seller_rv"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="409dp"
+            android:layout_height="323dp"
             android:layout_margin="4dp"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/best_seller" />
+            app:layout_constraintTop_toBottomOf="@+id/best_seller" >
+
+        </androidx.recyclerview.widget.RecyclerView>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </androidx.core.widget.NestedScrollView>

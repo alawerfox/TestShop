@@ -1,11 +1,17 @@
 package ru.kartyshova.testshop.data
 
+import android.os.Parcelable
+import androidx.navigation.NavArgs
+import kotlinx.parcelize.Parcelize
+
+
 data class HomeStore(
     val id: String,
     val title: String,
     val picture: String
 )
 
+@Parcelize
 data class BestSeller(
     val id: String,
     val is_favorites: Boolean,
@@ -13,7 +19,7 @@ data class BestSeller(
     val price_without_discount: Double,
     val discount_price: Double,
     val picture: String
-)
+) : Parcelable
 
 data class MainResponse(
     val home_store: List<HomeStore>,
@@ -45,4 +51,4 @@ data class Basket(
     val image: String,
     val price: Double,
     val title: String
-)
+): NavArgs

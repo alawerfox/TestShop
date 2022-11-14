@@ -6,14 +6,22 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
+import com.google.android.material.bottomsheet.BottomSheetDialog
+import ru.kartyshova.testshop.R
+import ru.kartyshova.testshop.data.BestSeller
+import ru.kartyshova.testshop.data.ProductCardResponse
 import ru.kartyshova.testshop.databinding.MainScreenBinding
+import ru.kartyshova.testshop.presentation.ProductDetailFragment.ProductDetailsFragment
 import ru.kartyshova.testshop.presentation.ShopViewModel
 
 class MainFragment: Fragment() {
 
     private val viewModel: ShopViewModel by viewModels()
     private val bestSellerAdapter = BestSellerAdapter()
+    private val hotSalesAdapter = HotSalesAdapter()
 
     lateinit var binding: MainScreenBinding
 
@@ -26,13 +34,18 @@ class MainFragment: Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        bestSellerAdapter.onClick = { bestSeller ->
+            findNavController().navigate(
+                MainFragmentDirections.actionMainFragmentToProductDetailsFragment(bestSeller))
+        }
+
         viewModel.status.observe(viewLifecycleOwner) {
-            val hotSalesAdapter = HotSalesAdapter()
             hotSalesAdapter.homeStore = it.home_store
             bestSellerAdapter.bestSeller = it.best_seller
             with(binding){
                 rvHotSales.adapter = hotSalesAdapter
                 bestSellerRv.adapter = bestSellerAdapter
+                filter.setOnClickListener { (showFilter()) }
             }
 
         }
@@ -42,6 +55,13 @@ class MainFragment: Fragment() {
             adapter = bestSellerAdapter
         }
 
+
+    }
+
+    fun showFilter(){
+        val filter = BottomSheetDialog(requireContext())
+        filter.setContentView(R.layout.filter)
+        filter.show()
     }
 
 
