@@ -27,7 +27,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/picture_best_seller"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ellipse_white" />
+        app:srcCompat="@drawable/ellipse_like" />
 
     <ImageView
         android:id="@+id/like"
@@ -37,7 +37,7 @@
         app:layout_constraintEnd_toEndOf="@+id/elipse_like"
         app:layout_constraintStart_toStartOf="@+id/elipse_like"
         app:layout_constraintTop_toTopOf="@+id/elipse_like"
-        app:srcCompat="@drawable/like_defolt" />
+        app:srcCompat="@drawable/like_selector" />
 
     <TextView
         android:id="@+id/price"

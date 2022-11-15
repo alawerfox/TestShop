@@ -37,6 +37,18 @@
         app:srcCompat="@drawable/btn_cart" />
 
     <TextView
+        android:id="@+id/number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:breakStrategy="high_quality"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_cart"
+        app:layout_constraintEnd_toEndOf="@+id/btn_cart"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="1" />
+
+    <TextView
         android:id="@+id/productDetails"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
@@ -53,6 +65,7 @@
         android:id="@+id/product_info"
         android:layout_width="0dp"
         android:layout_height="300dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
@@ -154,7 +167,7 @@
             android:id="@+id/product_detail_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="38dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="18dp"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"

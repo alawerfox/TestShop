@@ -27,12 +27,9 @@ data class MainResponse(
 )
 
 data class ProductCardResponse(
-    val cpu: String,
     val camera: String,
-    val capacity: Int,
-    val color: String,
     val id: Int,
-    val image: String,
+    val images: List<String>,
     val isFavorites: Boolean,
     val  price: Double,
     val rating: Double,

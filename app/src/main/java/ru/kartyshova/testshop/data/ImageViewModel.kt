@@ -13,10 +13,10 @@ class ImageViewModel: ViewModel() {
     val status: LiveData<ProductCardResponse> = _status
 
     init {
-        getMain()
+        getProductCard()
     }
 
-    private fun getMain() {
+    private fun getProductCard() {
         viewModelScope.launch {
             try {
                 val listResult = ShopApiServise.retrofitService.getProductCard()

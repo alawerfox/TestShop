@@ -24,12 +24,16 @@ class MainFragment: Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = MainScreenBinding.inflate(inflater)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        binding.select1.setOnClickListener {
+            it.isSelected = !it.isSelected
+        }
+
         bestSellerAdapter.onClick = { bestSeller ->
             findNavController().navigate(
                 MainFragmentDirections.actionMainFragmentToProductDetailsFragment(bestSeller))
@@ -46,7 +50,7 @@ class MainFragment: Fragment() {
 
         }
 
-        binding?.bestSellerRv?.apply {
+        binding.bestSellerRv.apply {
             layoutManager = GridLayoutManager(context, 2)
             adapter = bestSellerAdapter
         }

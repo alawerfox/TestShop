@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.tabs.TabLayout
@@ -20,6 +21,7 @@ class ProductDetailsFragment : Fragment() {
     private var bestSeller: BestSeller? = null
     private val viewModel: ImageViewModel by viewModels()
     private val productDetailAdapter = ProductDetailAdapter()
+    private val numberModel: NumberModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,7 +35,7 @@ class ProductDetailsFragment : Fragment() {
         bestSeller = arguments?.getParcelable<BestSeller>("arg")
 
         viewModel.status.observe(viewLifecycleOwner) {
-            productDetailAdapter.image = listOf(it.image)
+            productDetailAdapter.image = it.images
             binding.productInfo.adapter = productDetailAdapter
 
         with(binding) {
@@ -50,22 +52,25 @@ class ProductDetailsFragment : Fragment() {
                 }
 
                 override fun onTabReselected(tab: TabLayout.Tab?) {
+                    childFragmentManager.beginTransaction().replace(R.id.plaseHolder, shopList)
+                        .commit()
                 }
 
             })
+            val tab = productDetailsTabLayoyt.getTabAt(0)
+            productDetailsTabLayoyt.selectTab(tab)
 
             btnCart.setOnClickListener {
                 bestSeller?.let {
                     findNavController().navigate(
-                        ProductDetailsFragmentDirections.actionProductDetailsFragmentToCartFragment(
-                            it
-                        )
-                    )
+                        ProductDetailsFragmentDirections.actionProductDetailsFragmentToCartFragment(it))
                 }
             }
+            numberModel.cartNumber.observe(viewLifecycleOwner, {
+                binding.number.text = it
+            })
+
         }
-
-
 
     }
 }

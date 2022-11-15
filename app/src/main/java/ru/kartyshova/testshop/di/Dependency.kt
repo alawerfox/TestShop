@@ -5,6 +5,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
+import ru.kartyshova.testshop.data.ImageViewModel
 import ru.kartyshova.testshop.data.ShopApi
 import ru.kartyshova.testshop.data.ShopViewModel
 
@@ -25,5 +26,6 @@ val dependency = module{
     }
 
     viewModel { ShopViewModel() }
+    viewModel { ImageViewModel() }
 
 }
