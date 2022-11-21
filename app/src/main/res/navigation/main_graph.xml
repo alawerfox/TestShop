@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="ru.kartyshova.testshop.presentation.MainFragment.MainFragment"
+        android:name="ru.kartyshova.testshop.main.MainFragment"
         android:label="MainFragment" >
         <action
             android:id="@+id/action_mainFragment_to_productDetailsFragment"
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/productDetailsFragment"
-        android:name="ru.kartyshova.testshop.presentation.ProductDetailFragment.ProductDetailsFragment"
+        android:name="ru.kartyshova.testshop.productcard.ProductDetailsFragment"
         android:label="ProductDetailsFragment" >
         <action
             android:id="@+id/action_productDetailsFragment_to_cartFragment"
@@ -26,6 +26,6 @@
     </fragment>
     <fragment
         android:id="@+id/cartFragment"
-        android:name="ru.kartyshova.testshop.presentation.CartFragment.CartFragment"
-        android:label="CartFragment" />
+        android:name="ru.kartyshova.testshop.cart.CartFragment"
+        android:label="ru.kartyshova.testshop.cart.CartFragment" />
 </navigation>
